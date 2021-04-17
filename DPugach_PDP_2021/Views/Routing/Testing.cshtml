@@ -1,0 +1,361 @@
+﻿<div>1) Какой из маршрутов будет работать при следующей конфигурации IApplicationBuilder.UseEndpoints</div>
+<pre>
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+	app.UseRouting();
+	app.UseEndpoints(endpoints => {
+		endpoints.MapControllerRoute(
+		name: "default",
+		pattern: "{controller=Main}/{action=Home}");
+	});
+}
+</pre>
+<div>
+	<input type="checkbox" id="11" name="1" value="Home"> <label for="11">/Home</label>
+	<br>
+	<input type="checkbox" id="12" name="1" value="Home/Index"> <label for="12">/Home/Index</label>
+	<br>
+	<input type="checkbox" id="13" name="1" value="Home/Index/17"> <label for="13">/Home/Index/17</label>
+	<br>
+	<input type="checkbox" id="14" name="1" value="none"> <label class="bg-success" for="14">Никакой</label>
+	<br>
+</div>
+<br>
+<div>2) Какой из маршрутов будет работать при следующей конфигурации IApplicationBuilder.UseEndpoints</div>
+<div></div>
+<pre>
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+	app.UseRouting();
+	app.UseEndpoints(endpoints => {
+		endpoints.MapControllerRoute(
+		name: "default",
+		pattern: "{controller=Main}/{action=Home}");
+	});
+}
+</pre>
+<div>
+	<input type="checkbox" id="21" name="2" value="/"> <label class="bg-success" for="21">/</label>
+	<br>
+	<input type="checkbox" id="22" name="2" value="Main"> <label class="bg-success" for="22">/Main</label>
+	<br>
+	<input type="checkbox" id="23" name="2" value="Main/Home"> <label class="bg-success" for="23">/Main/Home</label>
+	<br>
+	<input type="checkbox" id="24" name="2" value="Main/Home/17"> <label for="24">/Main/Home/17</label>
+	<br>
+	<input type="checkbox" id="25" name="2" value="none"> <label for="25">Никакой</label>
+	<br>
+</div>
+<br>
+<div>3) Какой из маршрутов будет работать при следующей конфигурации IApplicationBuilder.UseEndpoints</div>
+<pre>
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+	app.UseRouting();
+	app.UseEndpoints(endpoints => {
+		endpoints.MapControllerRoute(
+		name: "default",
+		pattern: "{controller=Main}/{action=Home}");
+	});
+}
+</pre>
+<div>
+	<input type="checkbox" id="31" name="3" value="Home"> <label for="31">/Home</label>
+	<br>
+	<input type="checkbox" id="32" name="3" value="Home/Main"> <label for="32">/Home/Main</label>
+	<br>
+	<input type="checkbox" id="33" name="3" value="Home/Main/17"> <label for="33">/Home/Main/17</label>
+	<br>
+	<input type="checkbox" id="34" name="3" value="none"> <label class="bg-success" for="44">Никакой</label>
+	<br>
+</div>
+<br>
+
+<div>4) Какой из маршрутов настроит MapDefaultControllerRoute</div>
+<pre>
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+	app.UseRouting();
+	app.UseEndpoints(endpoints => {
+		endpoints.MapDefaultControllerRoute();
+	});
+}
+</pre>
+<div>
+	<input type="checkbox" id="41" name="4" value="/"> <label class="bg-success" for="41">/</label>
+	<br>
+	<input type="checkbox" id="42" name="4" value="/"> <label class="bg-success" for="42">/Home</label>
+	<br>
+	<input type="checkbox" id="43" name="4" value="/"> <label class="bg-success" for="43">/Home/Index</label>
+	<br>
+	<input type="checkbox" id="44" name="4" value="/"> <label class="bg-success" for="44">/Home/Index/17</label>
+	<br>
+	<input type="checkbox" id="45" name="4" value="/"> <label for="45">Никакой</label>
+	<br>
+</div>
+<br>
+
+<div>5) Какой из маршрутов будет работать при следующей конфигурации IApplicationBuilder.UseEndpoints</div>
+<pre>
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+	app.UseRouting();
+	app.UseEndpoints(endpoints => {
+		endpoints.MapControllerRoute(
+			name: "default",
+			pattern: "Main/Main",>
+			defaults: new { controller = "Main", action = "Home" });
+	});
+}
+</pre>
+<div>
+	<input type="checkbox" id="51" name="5" value="/"> <label for="51">/</label>
+	<br>
+	<input type="radio" id="52" name="5" value="/Main"> <label for="52">/Main</label>
+	<br>
+	<input type="radio" id="53" name="5" value="/Main/Main"> <label class="bg-success" for="53">/Main/Main</label>
+	<br>
+	<input type="radio" id="54" name="5" value="/Main/Home"> <label for="54">/Main/Home</label>
+	<br>
+</div>
+<br>
+
+<div>6) У маршрутов построенных на основе соглашений учитывается ли порядок расположения объявлений в IApplicationBuilder.UseEndpoints?</div>
+<div>
+	<input type="radio" id="61" name="6" value="yes"> <label class="bg-success" for="61">Да</label>
+	<br />
+	<input type="radio" id="62" name="6" value="no"> <label for="62">Нет</label>
+	<br>
+</div>
+<br>
+
+<div>7) Какой из маршрутов будет работать при следующем указании атрибута на методе контроллера?</div>
+<pre>
+public class Routing: Controller
+{
+	[Route("Testing")]
+	public IActionResult Testing() {
+		return View("Testing"); ;
+	}
+}
+</pre>
+<div>
+	<input type="radio" id="71" name="7" value="Routing"> <label for="71">/Routing</label>
+	<br>
+	<input type="radio" id="72" name="7" value="Testing"> <label class="bg-success" for="72">/Testing</label>
+	<br>
+	<input type="radio" id="73" name="7" value="Routing/Testing"> <label for="73">/Routing/Testing</label>
+	<br>
+</div>
+<br>
+
+<div>8) Какой из маршрутов будет работать при следующем указании атрибута на методе контроллера?</div>
+<pre>
+public class Routing: Controller
+{
+	[Route("Testing/{id}"")]
+	public IActionResult Testing(int id) {
+		return View("Testing"); ;
+	}
+}
+</pre>
+<div>
+	<input type="radio" id="81" name="8" value="Routing"> <label for="81">/Routing</label>
+	<br>
+	<input type="radio" id="82" name="8" value="Testing"> <label for="82">/Testing</label>
+	<br>
+	<input type="radio" id="83" name="8" value="Routing/Testing"> <label for="83">/Routing/Testing</label>
+	<br>
+	<input type="radio" id="84" name="8" value="Routing/"> <label for="84">/Routing/8</label>
+	<br>
+	<input type="radio" id="85" name="8" value="Testing/"> <label class="bg-success" for="85">/Testing/8</label>
+	<br>
+	<input type="radio" id="86" name="8" value="Routing/Testing/"> <label for="86">/Routing/Testing/8</label>
+	<br>
+</div>
+<div>9) Какой из маршрутов будет работать при следующем указании атрибута на методе контроллера?</div>
+<pre>
+public class Routing: Controller
+{
+	[Route("Testing/{id?}"")]
+	public IActionResult Testing(int? id) {
+		return View("Testing"); ;
+	}
+}
+</pre>
+<div>
+	<input type="checkbox" id="91" name="9" value="Routing"> <label for="91">/Routing</label>
+	<br>
+	<input type="checkbox" id="92" name="9" value="Testing"> <label class="bg-success" for="92">/Testing</label>
+	<br>
+	<input type="checkbox" id="93" name="9" value="Routing/Testing"> <label for="93">/Routing/Testing</label>
+	<br>
+	<input type="checkbox" id="94" name="9" value="Routing/"> <label for="94">/Routing/8</label>
+	<br>
+	<input type="checkbox" id="95" name="9" value="Testing/"> <label class="bg-success" for="95">/Testing/8</label>
+	<br>
+	<input type="checkbox" id="96" name="9" value="Routing/Testing/"> <label for="96">/Routing/Testing/8</label>
+	<br>
+</div>
+<br>
+
+<div>10) Какой из маршрутов будет работать при следующем указании атрибута на методе контроллера?</div>
+<pre>
+public class Routing: Controller
+{
+	[Route("[controller]/[action]")]
+	public IActionResult Testing() {
+		return View("Testing"); ;
+	}
+}
+</pre>
+<div>
+	<input type="radio" id="101" name="10" value="Routing"> <label for="101">/Routing</label>
+	<br>
+	<input type="radio" id="102" name="10" value="Testing"> <label for="102">/Testing</label>
+	<br>
+	<input type="radio" id="103" name="10" value="Routing/Testing"> <label class="bg-success" for="103">/Routing/Testing</label>
+	<br>
+	<input type="radio" id="104" name="10" value="Routing/"> <label for="104">/Routing/8</label>
+	<br>
+	<input type="radio" id="105" name="10" value="Testing/"> <label for="105">/Testing/8</label>
+	<br>
+	<input type="radio" id="106" name="10" value="Routing/Testing/"> <label for="106">/Routing/Testing/8</label>
+	<br>
+</div>
+<br>
+
+<div>11) Какой из маршрутов откроется в браузере, если маршрут натсроить следуюзим образом?</div>
+<pre>
+public class Routing: Controller
+{
+	[HttpGet("[controller]/[action]/{id?}")]
+	public IActionResult Testing(int? id) {
+		return View("Testing"); ;
+	}
+}
+</pre>
+<div>
+	<input type="radio" id="111" name="11" value="Routing"> <label for="111">/Routing</label>
+	<br>
+	<input type="radio" id="112" name="11" value="Testing"> <label for="112">/Testing</label>
+	<br>
+	<input type="radio" id="113" name="11" value="Routing/Testing"> <label class="bg-success" for="113">/Routing/Testing</label>
+	<br>
+	<input type="radio" id="114" name="11" value="Routing/"> <label for="114">/Routing/8</label>
+	<br>
+	<input type="radio" id="115" name="11" value="Testing/"> <label for="115">/Testing/8</label>
+	<br>
+	<input type="radio" id="116" name="11" value="Routing/Testing/"> <label class="bg-success" for="116">/Routing/Testing/8</label>
+	<br>
+</div>
+<br>
+
+<div>12) Какой из маршрутов откроется в браузере, если маршрут натсроить следуюзим образом?</div>
+<pre>
+public class Routing: Controller
+{
+	[HttpPost("[controller]/[action]/{id?}")]
+	public IActionResult Testing(int? id) {
+		return View("Testing"); ;
+	}
+}
+</pre>
+<div>
+	<input type="radio" id="121" name="12" value="Routing"> <label for="121">/Routing</label>
+	<br>
+	<input type="radio" id="122" name="12" value="Testing"> <label for="122">/Testing</label>
+	<br>
+	<input type="radio" id="123" name="12" value="Routing/Testing"> <label for="123">/Routing/Testing</label>
+	<br>
+	<input type="radio" id="124" name="12" value="Routing/"> <label for="124">/Routing/8</label>
+	<br>
+	<input type="radio" id="125" name="12" value="Testing/"> <label for="125">/Testing/8</label>
+	<br>
+	<input type="radio" id="126" name="12" value="Routing/Testing/"> <label for="126">/Routing/Testing/8</label>
+	<br>
+	<input type="radio" id="127" name="12" value="none"> <label class="bg-success" for="127">Никакой</label>
+	<br>
+</div>
+<br>
+
+<div>13) Какой из маршрутов будет работать при следующем указании атрибута на методе контроллера?</div>
+<pre>
+public class Routing: Controller
+{
+	[HttpGet("[controller]/[action]/{id:int}")]
+	public IActionResult Testing(int id) {
+		return View("Testing"); ;
+	}
+}
+</pre>
+<div>
+	<input type="checkbox" id="131" name="13" value="Routing/Testing"> <label for="131">/Routing/Testing</label>
+	<br>
+	<input type="checkbox" id="132" name="13" value="Routing/Testing/one"> <label for="132">/Routing/Testing/one</label>
+	<br>
+	<input type="checkbox" id="133" name="13" value="Routing/Testing/00"> <label class="bg-success" for="133">/Routing/Testing/00</label>
+	<br>
+	<input type="checkbox" id="134" name="13" value="Routing/Testing/12"> <label class="bg-success" for="134">/Routing/Testing/12</label>
+	<br>
+</div>
+<br>
+
+<div>14) Какой из маршрутов будет работать при следующем указании атрибута на классе и методе контроллера?</div>
+<pre>
+[Route("Routing")]
+public class Routing: Controller
+{
+	[Route("Testing/{id:int?}")]
+	public IActionResult Testing(int? id) {
+		return View("Testing"); ;
+	}
+}
+</pre>
+<div>
+	<input type="checkbox" id="141" name="14" value="Routing/Testing"> <label class="bg-success" for="141">/Routing/Testing</label>
+	<br>
+	<input type="checkbox" id="142" name="14" value="Routing/Testing/one"> <label for="142">/Routing/Testing/one</label>
+	<br>
+	<input type="checkbox" id="143" name="14" value="Routing/Testing/00"> <label class="bg-success" for="143">/Routing/Testing/00</label>
+	<br>
+	<input type="checkbox" id="144" name="14" value="Routing/Testing/12"> <label class="bg-success" for="144">/Routing/Testing/12</label>
+	<br>
+	<input type="checkbox" id="145" name="14" value="Routing/Testing/12"> <label class="bg-success" for="145">Никакой</label>
+	<br>
+</div>
+<br>
+
+<div>15) Какой из маршрутов будет работать при следующем указании атрибута на классе и методе контроллера?</div>
+<pre>
+[Route("Routing")]
+public class Routing: Controller
+{
+	[Route("/")]
+	[Route("Testing/{id:int?}")]
+	public IActionResult Testing(int? id) {
+		return View("Testing"); ;
+	}
+}
+</pre>
+<div>
+	<input type="checkbox" id="151" name="15" value="Routing/Testing"> <label class="bg-success" for="151">/</label>
+	<br>
+	<input type="checkbox" id="152" name="15" value="Routing/Testing"> <label for="152">/Routing</label>
+	<br>
+	<input type="checkbox" id="153" name="15" value="Routing/Testing"> <label class="bg-success" for="153">/Routing/Testing</label>
+	<br>
+	<input type="checkbox" id="154" name="15" value="Routing/Testing/one"> <label for="154">/Routing/Testing/one</label>
+	<br>
+	<input type="checkbox" id="155" name="15" value="Routing/Testing/00"> <label class="bg-success" for="155">/Routing/Testing/007</label>
+	<br>
+	<input type="checkbox" id="156" name="15" value="Routing/Testing/12"> <label class="bg-success" for="156">/Routing/Testing/123</label>
+	<br>
+	<input type="checkbox" id="157" name="15" value="Routing/Testing/12"> <label class="bg-success" for="157">Никакой</label>
+	<br>
+</div>
+<br>
+
+<div>16) У маршрутов построенных на основе aтрибутов учитывается ли порядок расположения их перед классом/методом?</div>
+<div>
+	<input type="radio" id="61" name="6" value="yes"> <label for="61">Да</label>
+	<br />
+	<input type="radio" id="62" name="6" value="no"> <label class="bg-success" for="62">Нет</label>
+	<br>
+</div>
+<br>
