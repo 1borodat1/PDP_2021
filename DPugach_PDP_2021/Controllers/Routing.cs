@@ -1,18 +1,30 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace REST_API.Controllers
+﻿namespace REST_API.Controllers
 {
+	using Microsoft.AspNetCore.Mvc;
+
 	[Route("Routing")]
-	public class Routing: Controller
+	public class Routing: BaseController
 	{
-		[HttpGet("Testing/{id:int?}")]
-		public IActionResult Testing(int? id) {
-			ViewData["Title"] = "Routing";
-			return View("Testing"); ;
+
+		#region Properties: Protected
+
+		/// <inheritdoc cref="BaseController.PageTitle"/>
+		protected override string PageTitle => "Routing";
+
+		#endregion
+
+		#region Methods: Public
+
+		/// <summary>
+		/// Routing testing action.
+		/// </summary>
+		/// <returns>Routing testing action view.</returns>
+		[HttpGet("Testing")]
+		public IActionResult Testing() {
+			return View("Testing");
 		}
+
+		#endregion
+		
 	}
 }

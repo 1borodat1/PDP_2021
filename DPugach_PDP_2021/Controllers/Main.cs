@@ -1,17 +1,29 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace REST_API.Controllers
+﻿namespace REST_API.Controllers
 {
-    public class Main: Controller
+	using Microsoft.AspNetCore.Mvc;
+
+
+	public class Main: BaseController
     {
-        ///[Route("/")]
-        public IActionResult Home() {
-            ViewData["Title"] = "Home";
-            return View();
-        }
+
+		#region Properties: Protected
+
+		/// <inheritdoc cref="BaseController.PageTitle"/>
+		protected override string PageTitle => "Home";
+
+		#endregion
+
+		#region Methods: Public
+
+		/// <summary>
+		/// Home action.
+		/// </summary>
+		/// <returns>Home action view.</returns>
+		public IActionResult Home() {
+			return View();
+		}
+
+		#endregion
+		
     }
 }

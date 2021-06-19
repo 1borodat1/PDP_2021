@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REST_API", "DPugach_PDP_2021\REST_API.csproj", "{B513E04A-E949-49F3-AD76-8975779F13F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "REST_API", "DPugach_PDP_2021\REST_API.csproj", "{B513E04A-E949-49F3-AD76-8975779F13F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{67B9D72D-627B-443B-8E0F-A37B957BDB14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B513E04A-E949-49F3-AD76-8975779F13F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B513E04A-E949-49F3-AD76-8975779F13F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B513E04A-E949-49F3-AD76-8975779F13F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67B9D72D-627B-443B-8E0F-A37B957BDB14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B9D72D-627B-443B-8E0F-A37B957BDB14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B9D72D-627B-443B-8E0F-A37B957BDB14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B9D72D-627B-443B-8E0F-A37B957BDB14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

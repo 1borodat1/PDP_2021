@@ -51,3 +51,8 @@ main pre span {
 .active:after {
     content: "\2212";
 }
+
+ .tap-block{
+     display:inline-block;
+     margin:5px;
+ }

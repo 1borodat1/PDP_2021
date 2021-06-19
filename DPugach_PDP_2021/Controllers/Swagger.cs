@@ -1,14 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Primitives;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-
-namespace REST_API.Controllers
+﻿namespace REST_API.Controllers
 {
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Mvc;
+	using System;
+	using System.Net;
+
 	/// <summary>
 	/// Controller for demonstration swagger capabilities
 	/// </summary>

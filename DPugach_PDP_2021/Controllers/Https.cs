@@ -1,15 +1,30 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace REST_API.Controllers
+﻿namespace REST_API.Controllers
 {
-	public class Https: Controller
+	using Microsoft.AspNetCore.Mvc;
+	
+	[Route("Https")]
+	public class Https: BaseController
 	{
+
+		#region Properties: Protected
+
+		/// <inheritdoc cref="BaseController.PageTitle"/>
+		protected override string PageTitle => "Https";
+
+		#endregion
+
+		#region Methods: Public
+
+		/// <summary>
+		/// Tls handshake connection action.
+		/// </summary>
+		/// <returns>Tls handshake connection action view.</returns>
+		//[Route("Tls")]
 		public IActionResult Tls() {
 			return View();
 		}
+
+		#endregion
+
 	}
 }
