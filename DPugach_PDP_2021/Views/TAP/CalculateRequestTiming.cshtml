@@ -1,0 +1,23 @@
+﻿<div>
+    <div>
+        <label for="ButtonCanculate">@ViewData["IoBound1"]</label>
+    </div>
+    <div>
+        <label for="ButtonCanculate">@ViewData["IoBound2"]</label>
+    </div>
+    <div>
+        <label for="ButtonCanculate">@ViewData["CpuBound1"]</label>
+    </div>
+    <div>
+        <label for="ButtonCanculate">@ViewData["CpuBound2"]</label>
+    </div>
+    <div>
+        <label for="ButtonCanculate">@ViewData["CpuBound3"]</label>
+    </div>
+    <div class="tap-block">
+        <input type="button" name="CanculateButton" value="Refresh sync" onclick="location.href='@Url.Action("CalculateRequestTiming", "TAP")'" />
+    </div>
+    <div class="tap-block">
+        <input type="button" name="CanculateButton" value="Refresh async" onclick="location.href='@Url.Action("CalculateRequestTimingAsync", "TAP")'" />
+    </div>
+</div>
