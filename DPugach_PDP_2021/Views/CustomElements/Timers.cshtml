@@ -1,0 +1,23 @@
+﻿<div>
+    <div>Timer based on custom event approach.</div>
+    <custom-event-timer id="eventTimer" hour="numeric" minute="numeric" second="numeric"></custom-event-timer>
+</div>
+<div>
+    <div>Timer based on attribute change approach.</div>
+    <change-attribute-timer id="attributeTimer" hour="numeric" minute="numeric" second="numeric"></change-attribute-timer>
+</div>
+
+<script>
+    setInterval(() => {
+        attributeTimer.setAttribute('date-time', new Date());
+    }, 1000);
+
+    setInterval(() => {
+        const dateTime = new Date();
+        eventTimer.dispatchEvent(new CustomEvent('tick', {
+            bubbles: true,
+            composed: true,
+            detail: dateTime
+        }));
+    }, 1000);
+</script>
