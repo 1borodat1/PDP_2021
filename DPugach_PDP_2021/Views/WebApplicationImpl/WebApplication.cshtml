@@ -1,0 +1,15 @@
+﻿@using  REST_API.Models;
+@{
+    var result = ViewData["Result"] as WebApplicationModel;
+}
+
+<div><a asp-controller="WebApplicationImpl" asp-action="Monolith">Monolith</a></div>
+<div><a asp-controller="WebApplicationImpl" asp-action="Soa">SOA</a></div>
+<div><a asp-controller="WebApplicationImpl" asp-action="Microservice">Microservice</a></div>
+@if (result != null) {
+    <div>ApproachName: @result.ApproachName</div>
+    <div>Result: @result.Result</div>
+    <div>ExecutingTime: @result.ExecutingTime ticks</div>
+}
+
+
