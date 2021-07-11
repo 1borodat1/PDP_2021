@@ -2,6 +2,7 @@
 {
 	using Microsoft.AspNetCore.Mvc;
 	using REST_API.Models;
+	using REST_API.SOA;
 	using System;
 	using System.Net.Http;
 	using System.Threading.Tasks;
@@ -44,6 +45,9 @@
 		}
 
 		public IActionResult Soa() {
+			var tickSnapshot = DateTime.Now.Ticks;
+			var result = ESB.GetSquareRoot(GetRandomNumber());
+			SetResult("Monolith", result, DateTime.Now.Ticks - tickSnapshot);
 			return View("WebApplication");
 		}
 
@@ -59,6 +63,8 @@
 		#endregion
 
 	}
+
+
 
 	#endregion
 
